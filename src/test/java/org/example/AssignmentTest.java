@@ -48,7 +48,7 @@ public class AssignmentTest {
     static void removeXML() {
         new File("temeTest.xml").delete();
     }
-    
+
 
     @Test
     public void testAddAssignment_Success() {
