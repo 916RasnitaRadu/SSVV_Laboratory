@@ -51,7 +51,7 @@ public class StudentTest {
 
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     public void saveStudent_InvalidGroup_ThrowError() {
         String id = "Test";
         String nume = "Eu";
