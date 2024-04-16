@@ -1,0 +1,894 @@
+{
+  "$schema" : "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "UnitTestBot",
+        "organization" : "utbot.org",
+        "version" : "1.0",
+        "rules" : [ {
+          "id" : "utbot.exception.NullPointerException",
+          "name" : "NullPointerException",
+          "shortDescription" : {
+            "text" : "Unexpected NullPointerException detected."
+          },
+          "fullDescription" : {
+            "text" : "Seems like an exception NullPointerException might be thrown."
+          },
+          "help" : {
+            "text" : "https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html"
+          }
+        }, {
+          "id" : "utbot.exception.ClassCastException",
+          "name" : "ClassCastException",
+          "shortDescription" : {
+            "text" : "Unexpected ClassCastException detected."
+          },
+          "fullDescription" : {
+            "text" : "Seems like an exception ClassCastException might be thrown."
+          },
+          "help" : {
+            "text" : "https://docs.oracle.com/javase/8/docs/api/java/lang/ClassCastException.html"
+          }
+        } ]
+      }
+    },
+    "results" : [ {
+      "ruleId" : "utbot.exception.NullPointerException",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected exception: java.lang.NullPointerException.\nTest case: `toString()`\n[Generated test for this case](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/domain/Nota.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 37,
+            "startColumn" : 17
+          }
+        }
+      }, {
+        "logicalLocations" : [ {
+          "fullyQualifiedName" : "domain.Nota"
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/test/java/domain/NotaTest.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 201,
+            "startColumn" : 5
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "NotaTest.testToString_PairGetObject1(NotaTest.java:206)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/test/java/domain/NotaTest.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 206,
+                  "startColumn" : 9
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "domain.Nota.toString(Nota.java:37)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/domain/Nota.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 37,
+                  "startColumn" : 17
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "utbot.exception.ClassCastException",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected exception: java.lang.ClassCastException: class [B cannot be cast to class java.lang.String ([B and java.lang.String are in module java.base of loader 'bootstrap').\nTest case: `toString()`\n[Generated test for this case](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/domain/Nota.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 37,
+            "startColumn" : 17
+          }
+        }
+      }, {
+        "logicalLocations" : [ {
+          "fullyQualifiedName" : "domain.Nota"
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/test/java/domain/NotaTest.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 216,
+            "startColumn" : 5
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "NotaTest.testToString_ThrowClassCastException(NotaTest.java:223)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/test/java/domain/NotaTest.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 223,
+                  "startColumn" : 9
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "domain.Nota.toString(Nota.java:37)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/domain/Nota.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 37,
+                  "startColumn" : 17
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "utbot.exception.ClassCastException",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected exception: java.lang.ClassCastException: class [B cannot be cast to class java.lang.String ([B and java.lang.String are in module java.base of loader 'bootstrap').\nTest case: `toString()`\n[Generated test for this case](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/domain/Nota.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 38,
+            "startColumn" : 17
+          }
+        }
+      }, {
+        "logicalLocations" : [ {
+          "fullyQualifiedName" : "domain.Nota"
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/test/java/domain/NotaTest.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 234,
+            "startColumn" : 5
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "NotaTest.testToString_PairGetObject2(NotaTest.java:241)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/test/java/domain/NotaTest.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 241,
+                  "startColumn" : 9
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "domain.Nota.toString(Nota.java:38)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/domain/Nota.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 38,
+                  "startColumn" : 17
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "tool" : {
+      "driver" : {
+        "name" : "UnitTestBot",
+        "organization" : "utbot.org",
+        "version" : "1.0",
+        "rules" : [ ]
+      }
+    },
+    "results" : [ ]
+  }, {
+    "tool" : {
+      "driver" : {
+        "name" : "UnitTestBot",
+        "organization" : "utbot.org",
+        "version" : "1.0",
+        "rules" : [ ]
+      }
+    },
+    "results" : [ ]
+  }, {
+    "tool" : {
+      "driver" : {
+        "name" : "UnitTestBot",
+        "organization" : "utbot.org",
+        "version" : "1.0",
+        "rules" : [ ]
+      }
+    },
+    "results" : [ ]
+  }, {
+    "tool" : {
+      "driver" : {
+        "name" : "UnitTestBot",
+        "organization" : "utbot.org",
+        "version" : "1.0",
+        "rules" : [ {
+          "id" : "utbot.exception.NullPointerException",
+          "name" : "NullPointerException",
+          "shortDescription" : {
+            "text" : "Unexpected NullPointerException detected."
+          },
+          "fullDescription" : {
+            "text" : "Seems like an exception NullPointerException might be thrown."
+          },
+          "help" : {
+            "text" : "https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html"
+          }
+        }, {
+          "id" : "utbot.exception.ClassCastException",
+          "name" : "ClassCastException",
+          "shortDescription" : {
+            "text" : "Unexpected ClassCastException detected."
+          },
+          "fullDescription" : {
+            "text" : "Seems like an exception ClassCastException might be thrown."
+          },
+          "help" : {
+            "text" : "https://docs.oracle.com/javase/8/docs/api/java/lang/ClassCastException.html"
+          }
+        } ]
+      }
+    },
+    "results" : [ {
+      "ruleId" : "utbot.exception.NullPointerException",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected exception: java.lang.NullPointerException.\nTest case: `createStudentFile(null, null)`\n[Generated test for this case](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/service/Service.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 130,
+            "startColumn" : 9
+          }
+        }
+      }, {
+        "logicalLocations" : [ {
+          "fullyQualifiedName" : "service.Service"
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/test/java/service/ServiceTest.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 28,
+            "startColumn" : 5
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ServiceTest.testCreateStudentFile_ThrowNullPointerException(ServiceTest.java:33)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/test/java/service/ServiceTest.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 33,
+                  "startColumn" : 9
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "service.Service.createStudentFile(Service.java:130)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/service/Service.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 130,
+                  "startColumn" : 9
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "utbot.exception.NullPointerException",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected exception: java.lang.NullPointerException.\nTest case: `deleteStudent(null)`\n[Generated test for this case](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/service/Service.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 70,
+            "startColumn" : 9
+          }
+        }
+      }, {
+        "logicalLocations" : [ {
+          "fullyQualifiedName" : "service.Service"
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/test/java/service/ServiceTest.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 51,
+            "startColumn" : 5
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ServiceTest.testDeleteStudent_StudentXMLRepositoryDelete(ServiceTest.java:56)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/test/java/service/ServiceTest.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 56,
+                  "startColumn" : 9
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "service.Service.deleteStudent(Service.java:70)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/service/Service.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 70,
+                  "startColumn" : 9
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "utbot.exception.NullPointerException",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected exception: java.lang.NullPointerException.\nTest case: `deleteTema(null)`\n[Generated test for this case](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/service/Service.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 79,
+            "startColumn" : 9
+          }
+        }
+      }, {
+        "logicalLocations" : [ {
+          "fullyQualifiedName" : "service.Service"
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/test/java/service/ServiceTest.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 92,
+            "startColumn" : 5
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ServiceTest.testDeleteTema_TemaXMLRepositoryDelete(ServiceTest.java:97)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/test/java/service/ServiceTest.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 97,
+                  "startColumn" : 9
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "service.Service.deleteTema(Service.java:79)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/service/Service.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 79,
+                  "startColumn" : 9
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "utbot.exception.NullPointerException",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected exception: java.lang.NullPointerException.\nTest case: `deleteTema(<String>)`\n[Generated test for this case](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/repository/TemaXMLRepository.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 17,
+            "startColumn" : 9
+          }
+        }
+      }, {
+        "logicalLocations" : [ {
+          "fullyQualifiedName" : "repository.TemaXMLRepository"
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/test/java/service/ServiceTest.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 122,
+            "startColumn" : 5
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ServiceTest.testDeleteTema1(ServiceTest.java:138)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/test/java/service/ServiceTest.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 138,
+                  "startColumn" : 9
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "service.Service.deleteTema(Service.java:79)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/service/Service.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 79,
+                  "startColumn" : 9
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "repository.AbstractXMLRepository.delete(AbstractXMLRepository.java:99)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/repository/AbstractXMLRepository.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 99,
+                  "startColumn" : 9
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "repository.AbstractXMLRepository.writeToXmlFile(AbstractXMLRepository.java:65)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/repository/AbstractXMLRepository.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 65,
+                  "startColumn" : 13
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:647)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "java/util/LinkedHashMap$LinkedValues.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 647
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "repository.AbstractXMLRepository.lambda$writeToXmlFile$0(AbstractXMLRepository.java:65)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/repository/AbstractXMLRepository.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 65,
+                  "startColumn" : 13
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "repository.TemaXMLRepository.getElementFromEntity(TemaXMLRepository.java:8)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/repository/TemaXMLRepository.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 8,
+                  "startColumn" : 1
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "repository.TemaXMLRepository.getElementFromEntity(TemaXMLRepository.java:17)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/repository/TemaXMLRepository.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 17,
+                  "startColumn" : 9
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "utbot.exception.NullPointerException",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected exception: java.lang.NullPointerException.\nTest case: `saveStudent(null, null, -255)`\n[Generated test for this case](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/service/Service.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 29,
+            "startColumn" : 9
+          }
+        }
+      }, {
+        "logicalLocations" : [ {
+          "fullyQualifiedName" : "service.Service"
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/test/java/service/ServiceTest.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 156,
+            "startColumn" : 5
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ServiceTest.testSaveStudent_StudentXMLRepositorySave(ServiceTest.java:161)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/test/java/service/ServiceTest.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 161,
+                  "startColumn" : 9
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "service.Service.saveStudent(Service.java:29)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/service/Service.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 29,
+                  "startColumn" : 9
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "utbot.exception.ClassCastException",
+      "level" : "error",
+      "message" : {
+        "text" : "Unexpected exception: java.lang.ClassCastException: class domain.Student cannot be cast to class domain.Tema (domain.Student and domain.Tema are in unnamed module of loader org.utbot.instrumentation.process.HandlerClassesLoader @76aa44a3).\nTest case: `saveStudent(null, null, -255)`\n[Generated test for this case](1)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/validation/TemaValidator.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 4,
+            "startColumn" : 1
+          }
+        }
+      }, {
+        "logicalLocations" : [ {
+          "fullyQualifiedName" : "validation.TemaValidator"
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/test/java/service/ServiceTest.java",
+            "uriBaseId" : "%SRCROOT%"
+          },
+          "region" : {
+            "startLine" : 172,
+            "startColumn" : 5
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "ServiceTest.testSaveStudent_StudentXMLRepositorySave_1(ServiceTest.java:183)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/test/java/service/ServiceTest.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 183,
+                  "startColumn" : 9
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "service.Service.saveStudent(Service.java:29)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/service/Service.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 29,
+                  "startColumn" : 9
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "repository.AbstractXMLRepository.save(AbstractXMLRepository.java:89)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/repository/AbstractXMLRepository.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 89,
+                  "startColumn" : 9
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "repository.AbstractCRUDRepository.save(AbstractCRUDRepository.java:34)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/repository/AbstractCRUDRepository.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 34,
+                  "startColumn" : 13
+                }
+              }
+            }
+          }, {
+            "location" : {
+              "message" : {
+                "text" : "validation.TemaValidator.validate(TemaValidator.java:4)"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/validation/TemaValidator.java",
+                  "uriBaseId" : "%SRCROOT%"
+                },
+                "region" : {
+                  "startLine" : 4,
+                  "startColumn" : 1
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    } ]
+  } ]
+}
