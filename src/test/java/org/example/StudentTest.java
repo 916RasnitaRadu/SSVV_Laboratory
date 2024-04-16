@@ -36,7 +36,7 @@ public class StudentTest {
     }
 
     @Test
-    public void saveStudent_ValidData_CreatedSuccessfully() {
+    public void testSaveStudent_ValidData_CreatedSuccessfully() {
         String id = "test";
         String nume = "john";
         int grupa = 936;
